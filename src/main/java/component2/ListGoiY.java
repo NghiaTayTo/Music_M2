@@ -1,17 +1,18 @@
-package component;
+package component2;
 
-import model.Model_Menu;
 import java.awt.Component;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
+import javax.swing.ImageIcon;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
+import model.Model_GoiY;
 
-public class ListMenuItem<E extends Object> extends JList<E> {
+public class ListGoiY<E extends Object> extends JList<E> {
 
     private final DefaultListModel model;
 
-    public ListMenuItem() {
+    public ListGoiY() {
         model = new DefaultListModel();
         setModel(model);
         setOpaque(false);
@@ -22,20 +23,19 @@ public class ListMenuItem<E extends Object> extends JList<E> {
         return new DefaultListCellRenderer() {
             @Override
             public Component getListCellRendererComponent(JList<?> jlist, Object o, int index, boolean selected, boolean focus) {
-                Model_Menu data;
-                if (o instanceof Model_Menu) {
-                    data = (Model_Menu) o;
+                Model_GoiY data;
+                if (o instanceof Model_GoiY) {
+                    data = (Model_GoiY) o;
                 } else {
-                    data = new Model_Menu("No Data", "song");
+                    data = new Model_GoiY("Name", "Description", new ImageIcon(getClass().getResource("/icon/artists_selected.png")));
                 }
-                ItemMenu item = new ItemMenu(data);
-                item.setSelected(selected);
+                ItemGoiY item = new ItemGoiY(data);
                 return item;
             }
         };
     }
 
-    public void addItem(Model_Menu data) {
+    public void addItem(Model_GoiY data) {
         model.addElement(data);
     }
 }

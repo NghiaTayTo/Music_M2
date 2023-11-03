@@ -16,10 +16,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="sp" max="32767" attributes="0"/>
-          <Group type="102" attributes="0">
-              <Component id="scrollBarr1" min="-2" pref="240" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="160" max="32767" attributes="0"/>
+          <Component id="sp" pref="476" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="scrollBarr2" min="-2" pref="200" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -28,8 +29,8 @@
           <Group type="102" alignment="0" attributes="0">
               <Component id="sp" min="-2" pref="200" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="scrollBarr1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="10" max="32767" attributes="0"/>
+              <Component id="scrollBarr2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -42,7 +43,7 @@
         </Property>
         <Property name="verticalScrollBarPolicy" type="int" value="21"/>
         <Property name="horizontalScrollBar" type="javax.swing.JScrollBar" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="scrollBarr1"/>
+          <ComponentRef name="scrollBarr2"/>
         </Property>
       </Properties>
 
@@ -62,13 +63,13 @@
         </Container>
       </SubComponents>
     </Container>
-    <Component class="swing.ScrollBarr" name="scrollBarr1">
+    <Component class="swing.ScrollBarr" name="scrollBarr2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="cc" green="cc" red="cc" type="rgb"/>
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="0" green="0" red="0" type="rgb"/>
+          <Color blue="82" green="20" red="ef" type="rgb"/>
         </Property>
         <Property name="orientation" type="int" value="0"/>
       </Properties>

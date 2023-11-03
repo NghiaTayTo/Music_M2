@@ -18,8 +18,8 @@ public class header extends javax.swing.JPanel {
         Graphics2D g2 = (Graphics2D) g;
         g2.setColor(getBackground());
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#5874DC"), 0, getHeight(), Color.decode("#384E78"));
-        g2.setPaint(gp);
+//        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#66ff00"), 0, getHeight(), Color.decode("#a80077"));
+//        g2.setPaint(gp);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
         g2.fillRect(getWidth() - 25, getHeight()-25, getWidth(), getHeight());
         g2.fillRect(0, getHeight() - 25, getWidth(), getHeight());

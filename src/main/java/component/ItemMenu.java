@@ -6,7 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import model.Model_Menu;
 
-public class MenuItem extends javax.swing.JPanel {
+public class ItemMenu extends javax.swing.JPanel {
 
     public boolean isSelected() {
         return selected;
@@ -19,7 +19,7 @@ public class MenuItem extends javax.swing.JPanel {
         this.selected = selected;
         if (selected) {
             lbText.setFont(new java.awt.Font("sansserif", 1, 14));
-            lbText.setForeground(Color.WHITE);
+            lbText.setForeground(new Color(239,32,130));
             lbIcon.setIcon(data.toIconSelected());
         } else {
             lbText.setFont(new java.awt.Font("sansserif", 0, 14));
@@ -28,7 +28,7 @@ public class MenuItem extends javax.swing.JPanel {
         }
     }
 
-    public MenuItem(Model_Menu data) {
+    public ItemMenu(Model_Menu data) {
         this.data = data;
         initComponents();
         setOpaque(false);
@@ -40,9 +40,9 @@ public class MenuItem extends javax.swing.JPanel {
     protected void paintComponent(Graphics grphcs) {
         if (isSelected()) {
             Graphics2D g2 = (Graphics2D) grphcs;
-            g2.setColor(Color.WHITE);
+            g2.setColor(new Color(239,32,130));
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.fillRect(0, 0, 2, getHeight());
+            g2.fillRect(0, 0, 3, getHeight());
         }
         super.paintComponent(grphcs);
     }

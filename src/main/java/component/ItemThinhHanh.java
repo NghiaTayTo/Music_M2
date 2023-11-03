@@ -78,6 +78,7 @@ public class ItemThinhHanh extends javax.swing.JPanel {
         lbTitle.setText("Title");
 
         lbMoTa.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        lbMoTa.setForeground(new java.awt.Color(255, 255, 255));
         lbMoTa.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbMoTa.setText("Mô tả");
 

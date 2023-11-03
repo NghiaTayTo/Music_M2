@@ -20,8 +20,8 @@ public class Menu extends javax.swing.JPanel {
         Graphics2D g2 = (Graphics2D) grphcs;
         g2.setColor(getBackground());
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#384E78"), 0, getHeight(), Color.decode("#5874DC"));
-        g2.setPaint(gp);
+//        GradientPaint gp = new GradientPaint(0, 0, Color.decode("#5614B0"), 0, getHeight(), Color.decode("#DBD65C"));
+//        g2.setPaint(gp);
         g2.fillRoundRect(0, 0, getWidth(), getHeight(), 0, 0);
 //        g2.fillRect(getWidth() - 25, 0, getWidth(), getHeight());
 //        g2.fillRect(0, getHeight() - 25, getWidth(), getHeight());
