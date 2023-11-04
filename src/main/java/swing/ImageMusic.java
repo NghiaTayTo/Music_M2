@@ -1,4 +1,3 @@
-
 package swing;
 
 import java.awt.AlphaComposite;
@@ -11,13 +10,14 @@ import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.RenderingHints;
+import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
+public class ImageMusic extends JComponent {
 
-public class ImageMusic extends JComponent{
     public Icon getImage() {
         return image;
     }
@@ -51,26 +51,32 @@ public class ImageMusic extends JComponent{
         if (image != null) {
             int width = image.getIconWidth();
             int height = image.getIconHeight();
-            int diameter = Math.min(width, height);
+            int diameter = Math.max(width, height);
             BufferedImage mask = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2d = mask.createGraphics();
-            g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);    //  for image smooth
-            g2d.fillOval(0, 0, diameter - 1, diameter - 1);
-            g2d.dispose();
             BufferedImage masked = new BufferedImage(diameter, diameter, BufferedImage.TYPE_INT_ARGB);
-            g2d = masked.createGraphics();
+//            g2d = masked.createGraphics();
             g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);    //  for image smooth
-            int x = (diameter - width) / 1;
-            int y = (diameter - height) / 1;
+            int x = 0; //(diameter - width) / 2
+            int y = 0;
+            int cornerRadius = 10;
+            g2d.setComposite(AlphaComposite.Src);
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setColor(Color.WHITE);
+            g2d.fill(new RoundRectangle2D.Float(0, 0, width, height, cornerRadius, cornerRadius));
+//            RoundRectangle2D roundRect = new RoundRectangle2D.Float(x, y, width, height, cornerRadius, cornerRadius);
+//            g2d.setClip(roundRect);
+            g2d.setComposite(AlphaComposite.SrcAtop);
             g2d.drawImage(toImage(image), x, y, null);
-            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.DST_IN));
-            g2d.drawImage(mask, 0, 0, null);
+
+//            g2d.drawImage(mask, 0, 0, null);
             g2d.dispose();
             Icon icon = new ImageIcon(masked);
-            Rectangle size = getAutoSize(icon);
+            Rectangle size = getAutoSize(image);
             Graphics2D g2 = (Graphics2D) g;
             g2.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-            g2.drawImage(toImage(icon), size.getLocation().x, size.getLocation().y, size.getSize().width, size.getSize().height, null);
+            g2.drawImage(toImage(image), size.getLocation().x, size.getLocation().y, size.getSize().width, size.getSize().height, null);
+
             if (borderSize > 0) {
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 g2.setColor(borderColor);
