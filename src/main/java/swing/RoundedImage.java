@@ -1,5 +1,6 @@
 package swing;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -35,14 +36,27 @@ public class RoundedImage extends JComponent {
         if (image != null) {
             int width = image.getIconWidth();
             int height = image.getIconHeight();
-            int cornerRadius = 100;
+            int cornerRadius = 20;
             BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
             Rectangle size = getAutoSize(image);
             Graphics2D g2d = outputImage.createGraphics();
-            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+            g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);   
             g2d.setClip(new RoundRectangle2D.Float(0, 0, width, height, cornerRadius, cornerRadius));
             g2d.drawImage(toImage(image), 0, 0, width, height, null); // Vẽ ảnh lên outputImage
             g2d.dispose();
+            
+            // Thêm border màu xám
+            int borderSize = 2; // Kích thước của border
+            BufferedImage imageWithBorder = new BufferedImage(width + 2 * borderSize, height + 2 * borderSize, BufferedImage.TYPE_INT_ARGB);
+            Graphics2D g2dWithBorder = imageWithBorder.createGraphics();
+            g2dWithBorder.setColor(Color.GRAY); // Màu xám
+            g2dWithBorder.fillRect(0, 0, width + 2 * borderSize, height + 2 * borderSize);
+            g2dWithBorder.drawImage(outputImage, borderSize, borderSize, width, height, null);
+            g2dWithBorder.dispose();
+
+//            g.drawImage(imageWithBorder, 0, 0, null);
+
+
 
             g.drawImage(outputImage, size.getLocation().x, size.getLocation().y, size.getSize().width, size.getSize().height, null);
 //            super.paint(g);
