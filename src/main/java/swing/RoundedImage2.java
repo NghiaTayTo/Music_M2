@@ -13,14 +13,14 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 
-public class RoundedImage extends JComponent {
+public class RoundedImage2 extends JComponent {
 
     private Icon image;
 
-    public RoundedImage() {
+    public RoundedImage2() {
     }
 
-    public RoundedImage(Icon image) {
+    public RoundedImage2(Icon image) {
         this.image = image;
     }
 
@@ -37,7 +37,7 @@ public class RoundedImage extends JComponent {
         if (image != null) {
             int width = image.getIconWidth();
             int height = image.getIconHeight();
-            int cornerRadius = 15;
+            int cornerRadius = 60;
             int borderThickness = 1;
             BufferedImage outputImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
             Rectangle size = getAutoSize(image);

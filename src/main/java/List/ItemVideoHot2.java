@@ -31,9 +31,11 @@ public Model_Profile getData() {
         lbSi = new javax.swing.JLabel();
 
         lbName.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
+        lbName.setForeground(new java.awt.Color(255, 255, 255));
         lbName.setText("Name");
 
         lbSi.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        lbSi.setForeground(new java.awt.Color(204, 204, 204));
         lbSi.setText("Nghệ sĩ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -41,21 +43,20 @@ public Model_Profile getData() {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lbName, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(icon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbSi, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lbSi, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE))
+                .addGap(0, 0, 0))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(icon, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, 166, Short.MAX_VALUE)
                 .addGap(0, 0, 0)
                 .addComponent(lbName)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lbSi)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(lbSi))
         );
     }// </editor-fold>//GEN-END:initComponents
 
